@@ -1,0 +1,705 @@
+{
+  "schema": "cti-cumulative-v1",
+  "baseline": "2026-11-23T00:01:00Z",
+  "as_of": "2026-11-26",
+  "records": [
+    {
+      "cve": "CVE-2026-99362",
+      "vendor": "Linux",
+      "technology": "NFS kernel server (NFS2ROOT)",
+      "asset": "Infrastructure",
+      "date": "2026-11-25",
+      "event": "New researcher demonstration",
+      "evidence": "Researcher demonstrated",
+      "priority": "P1",
+      "score": 9.8,
+      "cvss_version": "Researcher score; version unverified",
+      "summary": "Researcher-demonstrated remote root compromise through NFS server memory corruption.",
+      "impact": "Complete host compromise; potential loss of storage confidentiality and availability.",
+      "action": "Identify reachable NFSv4.1/4.2 servers; restrict NFS access; install distribution-approved kernel fix and reboot.",
+      "hunt": "Review NFS-related kernel warnings, unexpected shell processes and bursts of short sessions.",
+      "affected": "Unpatched in-kernel NFS server with NFSv4.1/4.2 enabled and reachable",
+      "fixed": "Upstream 6.12.117, 6.18.61, 7.3.2, 7.4-rc1; verify distribution backports",
+      "patch": "Available",
+      "kev": "Not verified",
+      "published": "2026-11-20",
+      "epss": "Not verified",
+      "notes": "Private working exploit demonstrated by researchers; malicious exploitation not confirmed. Urgent escalation based on impact; not a confirmed zero-day in the wild.",
+      "sources": [
+        {
+          "label": "Primary advisory / research",
+          "url": "https://opensec.in/blog/nfs2root-cve-2026-99362"
+        },
+        {
+          "label": "CVE record",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-99362"
+        }
+      ],
+      "owner": "Infrastructure / platform security",
+      "sla": "Immediate assessment; target 24h for exposed systems"
+    },
+    {
+      "cve": "CVE-2026-133469",
+      "vendor": "Vates",
+      "technology": "Xen Orchestra",
+      "asset": "Infrastructure",
+      "date": "2026-11-25",
+      "event": "CISA KEV addition",
+      "evidence": "Confirmed exploitation",
+      "priority": "P1",
+      "score": null,
+      "cvss_version": "",
+      "summary": "Improper token validation allows authentication bypass.",
+      "impact": "Administrative access to virtualization management; potential host takeover.",
+      "action": "Upgrade XO, isolate management access and rotate secrets if compromised.",
+      "hunt": "Inspect unexpected VMs, host persistence and suspicious management requests.",
+      "affected": "XO before 6.9.2 stable / 6.10.1 latest; appliance affected",
+      "fixed": "6.9.2 stable / 6.10.1 latest or newer fixed release",
+      "patch": "Available",
+      "kev": "Yes",
+      "published": "2026-11-10",
+      "epss": "Not verified",
+      "notes": "Vendor labels critical; numeric CVSS not available in advisory.",
+      "sources": [
+        {
+          "label": "Primary advisory / research",
+          "url": "https://docs.vates.tech/security-advisories/advisories/2026/vates-sa-2026-062/"
+        },
+        {
+          "label": "CVE record",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133469"
+        },
+        {
+          "label": "CISA KEV official mirror",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        }
+      ],
+      "owner": "Infrastructure / platform security",
+      "sla": "Immediate assessment; target 24h for exposed systems"
+    },
+    {
+      "cve": "CVE-2026-133324",
+      "vendor": "Mitel",
+      "technology": "MiCollab",
+      "asset": "Application",
+      "date": "2026-11-25",
+      "event": "CISA KEV addition",
+      "evidence": "Confirmed exploitation",
+      "priority": "P1",
+      "score": 5.3,
+      "cvss_version": "3.1",
+      "summary": "Authentication bypass in conferencing component.",
+      "impact": "Unauthorised application actions; potential chain with other MiCollab flaws.",
+      "action": "Restrict external access to AWV; apply Mitel patch or upgrade; assess compromise.",
+      "hunt": "Review access events and unexpected application changes.",
+      "affected": "10.3 (10.3.0.18) and earlier",
+      "fixed": "10.3.0.18 plus KB000129195 patch or later fixed release",
+      "patch": "Available",
+      "kev": "Yes",
+      "published": "2026-11-16 (advisory; CVE numbers updated 24 Nov)",
+      "epss": "Not verified",
+      "notes": "Vendor scores; exploit chaining can amplify impact.",
+      "sources": [
+        {
+          "label": "Primary advisory / research",
+          "url": "https://www.mitel.com/support/security-advisories/mitel-product-security-advisory-misa-2026-0012"
+        },
+        {
+          "label": "CVE record",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133324"
+        },
+        {
+          "label": "CISA KEV official mirror",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        }
+      ],
+      "owner": "Application security / DevSecOps",
+      "sla": "Immediate assessment; target 24h for exposed systems"
+    },
+    {
+      "cve": "CVE-2026-133323",
+      "vendor": "Mitel",
+      "technology": "MiCollab",
+      "asset": "Application",
+      "date": "2026-11-25",
+      "event": "CISA KEV addition",
+      "evidence": "Confirmed exploitation",
+      "priority": "P1",
+      "score": 10.0,
+      "cvss_version": "3.1",
+      "summary": "Unauthenticated OS command injection in conferencing component.",
+      "impact": "Execution of system commands; service disruption or compromise.",
+      "action": "Restrict external access to AWV; apply Mitel patch or upgrade; assess compromise.",
+      "hunt": "Review abnormal child processes and outbound connections.",
+      "affected": "10.3 (10.3.0.18) and earlier",
+      "fixed": "10.3.0.18 plus KB000129195 patch or later fixed release",
+      "patch": "Available",
+      "kev": "Yes",
+      "published": "2026-11-16 (advisory; CVE numbers updated 24 Nov)",
+      "epss": "Not verified",
+      "notes": "Vendor scores; exploit chaining can amplify impact.",
+      "sources": [
+        {
+          "label": "Primary advisory / research",
+          "url": "https://www.mitel.com/support/security-advisories/mitel-product-security-advisory-misa-2026-0012"
+        },
+        {
+          "label": "CVE record",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133323"
+        },
+        {
+          "label": "CISA KEV official mirror",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        }
+      ],
+      "owner": "Application security / DevSecOps",
+      "sla": "Immediate assessment; target 24h for exposed systems"
+    },
+    {
+      "cve": "CVE-2026-133311",
+      "vendor": "Mitel",
+      "technology": "MiCollab",
+      "asset": "Application",
+      "date": "2026-11-25",
+      "event": "CISA KEV addition",
+      "evidence": "Confirmed exploitation",
+      "priority": "P1",
+      "score": 5.9,
+      "cvss_version": "3.1",
+      "summary": "Weak authentication permits unauthorised access to certain sensitive information.",
+      "impact": "Information exposure and potential chaining.",
+      "action": "Restrict external access to AWV; apply Mitel patch or upgrade; assess compromise.",
+      "hunt": "Review unusual access to conferencing resources.",
+      "affected": "10.3 (10.3.0.18) and earlier",
+      "fixed": "10.3.0.18 plus KB000129195 patch or later fixed release",
+      "patch": "Available",
+      "kev": "Yes",
+      "published": "2026-11-16 (advisory; CVE numbers updated 24 Nov)",
+      "epss": "Not verified",
+      "notes": "Vendor scores; exploit chaining can amplify impact.",
+      "sources": [
+        {
+          "label": "Primary advisory / research",
+          "url": "https://www.mitel.com/support/security-advisories/mitel-product-security-advisory-misa-2026-0012"
+        },
+        {
+          "label": "CVE record",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133311"
+        },
+        {
+          "label": "CISA KEV official mirror",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        }
+      ],
+      "owner": "Application security / DevSecOps",
+      "sla": "Immediate assessment; target 24h for exposed systems"
+    },
+    {
+      "cve": "CVE-2026-133303",
+      "vendor": "Mitel",
+      "technology": "MiCollab",
+      "asset": "Application",
+      "date": "2026-11-25",
+      "event": "CISA KEV addition",
+      "evidence": "Confirmed exploitation",
+      "priority": "P1",
+      "score": 9.0,
+      "cvss_version": "3.1",
+      "summary": "XML injection in the conferencing component with pre-staged content.",
+      "impact": "System command execution and service compromise.",
+      "action": "Restrict external access to AWV; apply Mitel patch or upgrade; assess compromise.",
+      "hunt": "Review conferencing requests and unexpected processes.",
+      "affected": "10.3 (10.3.0.18) and earlier",
+      "fixed": "10.3.0.18 plus KB000129195 patch or later fixed release",
+      "patch": "Available",
+      "kev": "Yes",
+      "published": "2026-11-16 (advisory; CVE numbers updated 24 Nov)",
+      "epss": "Not verified",
+      "notes": "Vendor scores; exploit chaining can amplify impact.",
+      "sources": [
+        {
+          "label": "Primary advisory / research",
+          "url": "https://www.mitel.com/support/security-advisories/mitel-product-security-advisory-misa-2026-0012"
+        },
+        {
+          "label": "CVE record",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133303"
+        },
+        {
+          "label": "CISA KEV official mirror",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        }
+      ],
+      "owner": "Application security / DevSecOps",
+      "sla": "Immediate assessment; target 24h for exposed systems"
+    },
+    {
+      "cve": "CVE-2026-133275",
+      "vendor": "Mitel",
+      "technology": "MiCollab",
+      "asset": "Application",
+      "date": "2026-11-25",
+      "event": "CISA KEV addition",
+      "evidence": "Confirmed exploitation",
+      "priority": "P1",
+      "score": 5.3,
+      "cvss_version": "3.1",
+      "summary": "Unrestricted file uploads in the conferencing component.",
+      "impact": "Unauthorised file placement; risk increases in combination with other flaws.",
+      "action": "Restrict external access to AWV; apply Mitel patch or upgrade; assess compromise.",
+      "hunt": "Review unexpected uploads and file integrity.",
+      "affected": "10.3 (10.3.0.18) and earlier",
+      "fixed": "10.3.0.18 plus KB000129195 patch or later fixed release",
+      "patch": "Available",
+      "kev": "Yes",
+      "published": "2026-11-16 (advisory; CVE numbers updated 24 Nov)",
+      "epss": "Not verified",
+      "notes": "Vendor scores; exploit chaining can amplify impact.",
+      "sources": [
+        {
+          "label": "Primary advisory / research",
+          "url": "https://www.mitel.com/support/security-advisories/mitel-product-security-advisory-misa-2026-0012"
+        },
+        {
+          "label": "CVE record",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133275"
+        },
+        {
+          "label": "CISA KEV official mirror",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        }
+      ],
+      "owner": "Application security / DevSecOps",
+      "sla": "Immediate assessment; target 24h for exposed systems"
+    },
+    {
+      "cve": "CVE-2026-103406",
+      "vendor": "HPE / Juniper",
+      "technology": "Session Smart Conductor / Router",
+      "asset": "Network",
+      "date": "2026-11-25",
+      "event": "CISA KEV addition",
+      "evidence": "Confirmed exploitation",
+      "priority": "P1",
+      "score": null,
+      "cvss_version": "",
+      "summary": "OS command injection in the management system.",
+      "impact": "Potential remote root compromise.",
+      "action": "Restrict management access and install vendor-approved updates; assess system integrity.",
+      "hunt": "Inspect administrative changes, unexpected processes and management traffic.",
+      "affected": "Not verified; consult vendor advisory.",
+      "fixed": "Confirm vendor-supported fixed build.",
+      "patch": "Verify with vendor",
+      "kev": "Yes",
+      "published": "Not verified",
+      "epss": "Not verified",
+      "notes": "",
+      "sources": [
+        {
+          "label": "Primary advisory / research",
+          "url": "https://supportportal.juniper.net/s/article/2026-10-On-Demand-Security-Bulletin-Session-Smart-Router-and-Session-Smart-Conductor-Multiple-internally-discovered-vulnerabilities-resolved"
+        },
+        {
+          "label": "CVE record",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103406"
+        },
+        {
+          "label": "CISA KEV official mirror",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        }
+      ],
+      "owner": "Network security",
+      "sla": "Immediate assessment; target 24h for exposed systems"
+    },
+    {
+      "cve": "CVE-2025-41450",
+      "vendor": "Danfoss",
+      "technology": "AK-SM 800A",
+      "asset": "OT / ICS",
+      "date": "2026-11-25",
+      "event": "CISA KEV addition",
+      "evidence": "Confirmed exploitation",
+      "priority": "P1",
+      "score": null,
+      "cvss_version": "",
+      "summary": "Improper authentication exposes sensitive report data.",
+      "impact": "Disclosure of network and user information.",
+      "action": "Identify devices; isolate management interfaces; coordinate vendor mitigation or upgrade with OT change control.",
+      "hunt": "Review unexpected report generation and access logs.",
+      "affected": "Not verified; consult vendor advisory.",
+      "fixed": "Confirm vendor-supported fixed build.",
+      "patch": "Verify with vendor",
+      "kev": "Yes",
+      "published": "Not verified",
+      "epss": "Not verified",
+      "notes": "Vendor page returned 403; fixed versions and CVSS not independently checked. CISA mirror verified.",
+      "sources": [
+        {
+          "label": "Primary advisory / research",
+          "url": "https://www.danfoss.com/en/service-and-support/coordinated-vulnerability-disclosure/danfoss-security-advisories/dsa-2025-03-01"
+        },
+        {
+          "label": "CVE record",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-41450"
+        },
+        {
+          "label": "CISA KEV official mirror",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        }
+      ],
+      "owner": "OT engineering / security",
+      "sla": "Immediate assessment; target 24h for exposed systems"
+    },
+    {
+      "cve": "CVE-2023-25915",
+      "vendor": "Danfoss",
+      "technology": "AK-SM 800A",
+      "asset": "OT / ICS",
+      "date": "2026-11-25",
+      "event": "CISA KEV addition",
+      "evidence": "Confirmed exploitation",
+      "priority": "P1",
+      "score": null,
+      "cvss_version": "",
+      "summary": "Improper input validation permits remote command execution.",
+      "impact": "System compromise and operational disruption.",
+      "action": "Identify devices; isolate management interfaces; coordinate vendor mitigation or upgrade with OT change control.",
+      "hunt": "Review unexpected commands and configuration changes.",
+      "affected": "Not verified; consult vendor advisory.",
+      "fixed": "Confirm vendor-supported fixed build.",
+      "patch": "Verify with vendor",
+      "kev": "Yes",
+      "published": "Not verified",
+      "epss": "Not verified",
+      "notes": "Vendor page returned 403; fixed versions and CVSS not independently checked. CISA mirror verified.",
+      "sources": [
+        {
+          "label": "Primary advisory / research",
+          "url": "https://www.danfoss.com/en/service-and-support/coordinated-vulnerability-disclosure/danfoss-security-advisories/dsa-2023-08-01"
+        },
+        {
+          "label": "CVE record",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-25915"
+        },
+        {
+          "label": "CISA KEV official mirror",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        }
+      ],
+      "owner": "OT engineering / security",
+      "sla": "Immediate assessment; target 24h for exposed systems"
+    },
+    {
+      "cve": "CVE-2023-25914",
+      "vendor": "Danfoss",
+      "technology": "AK-SM 800A",
+      "asset": "OT / ICS",
+      "date": "2026-11-25",
+      "event": "CISA KEV addition",
+      "evidence": "Confirmed exploitation",
+      "priority": "P1",
+      "score": null,
+      "cvss_version": "",
+      "summary": "Path traversal in system interface.",
+      "impact": "Unauthorised reading of system files.",
+      "action": "Identify devices; isolate management interfaces; coordinate vendor mitigation or upgrade with OT change control.",
+      "hunt": "Review unusual file access and management requests.",
+      "affected": "Not verified; consult vendor advisory.",
+      "fixed": "Confirm vendor-supported fixed build.",
+      "patch": "Verify with vendor",
+      "kev": "Yes",
+      "published": "Not verified",
+      "epss": "Not verified",
+      "notes": "Vendor page returned 403; fixed versions and CVSS not independently checked. CISA mirror verified.",
+      "sources": [
+        {
+          "label": "Primary advisory / research",
+          "url": "https://www.danfoss.com/en/service-and-support/coordinated-vulnerability-disclosure/danfoss-security-advisories/dsa-2023-08-01"
+        },
+        {
+          "label": "CVE record",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-25914"
+        },
+        {
+          "label": "CISA KEV official mirror",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        }
+      ],
+      "owner": "OT engineering / security",
+      "sla": "Immediate assessment; target 24h for exposed systems"
+    },
+    {
+      "cve": "CVE-2026-132224",
+      "vendor": "Optimizely",
+      "technology": "Web Experimentation",
+      "asset": "Cloud",
+      "date": "2026-11-24",
+      "event": "CISA KEV addition",
+      "evidence": "Confirmed exploitation",
+      "priority": "P1",
+      "score": null,
+      "cvss_version": "",
+      "summary": "Account signup flaw permits impersonation and modification of hosted JavaScript.",
+      "impact": "Potential customer website supply-chain compromise.",
+      "action": "Consult vendor incident status; review project changes, restore trusted scripts, revoke exposed credentials where appropriate.",
+      "hunt": "Audit project history, unexpected scripts and affected website traffic.",
+      "affected": "Not verified; consult vendor advisory.",
+      "fixed": "Vendor-managed service; verify tenant status",
+      "patch": "Vendor-managed / verify",
+      "kev": "Yes",
+      "published": "Not verified",
+      "epss": "Not verified",
+      "notes": "",
+      "sources": [
+        {
+          "label": "Primary advisory / research",
+          "url": "https://status.optimizely.com/incidents/ftw0fh9wx43z"
+        },
+        {
+          "label": "CVE record",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-132224"
+        },
+        {
+          "label": "CISA KEV official mirror",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        }
+      ],
+      "owner": "Cloud security",
+      "sla": "Immediate assessment; target 24h for exposed systems"
+    },
+    {
+      "cve": "CVE-2026-132165",
+      "vendor": "Drupal",
+      "technology": "Drupal core",
+      "asset": "Application",
+      "date": "2026-11-24",
+      "event": "CISA KEV addition",
+      "evidence": "Confirmed exploitation",
+      "priority": "P1",
+      "score": null,
+      "cvss_version": "",
+      "summary": "Installer weakness enables site takeover or code execution under certain conditions.",
+      "impact": "Website compromise and data exposure.",
+      "action": "Upgrade and secure the installer; check file permissions and compromise.",
+      "hunt": "Inspect unexpected installation activity, configuration changes and web process activity.",
+      "affected": "Below 10.6.22; 11.0\u201311.3 before 11.3.22; 11.4 before 11.4.13",
+      "fixed": "10.6.22 / 11.3.22 / 11.4.13 or later supported release",
+      "patch": "Available",
+      "kev": "Yes",
+      "published": "2026-11-18",
+      "epss": "Not verified",
+      "notes": "",
+      "sources": [
+        {
+          "label": "Primary advisory / research",
+          "url": "https://www.drupal.org/sa-core-2026-017"
+        },
+        {
+          "label": "CVE record",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-132165"
+        },
+        {
+          "label": "CISA KEV official mirror",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        }
+      ],
+      "owner": "Application security / DevSecOps",
+      "sla": "Immediate assessment; target 24h for exposed systems"
+    },
+    {
+      "cve": "CVE-2026-131914",
+      "vendor": "Idunno",
+      "technology": "AntiCsrf (.NET library)",
+      "asset": "Application",
+      "date": "2026-11-24",
+      "event": "CISA KEV addition",
+      "evidence": "Confirmed exploitation",
+      "priority": "P1",
+      "score": null,
+      "cvss_version": "",
+      "summary": "Unsafe deserialization in a legacy anti-CSRF component.",
+      "impact": "Unauthenticated remote code execution in dependent web applications.",
+      "action": "Inventory dependencies; remove or replace legacy library; contain exposed apps.",
+      "hunt": "Inspect unusual web requests, process execution and application integrity.",
+      "affected": "Not verified; consult vendor advisory.",
+      "fixed": "Discontinue or transition to supported alternative per KEV",
+      "patch": "Replacement / mitigation",
+      "kev": "Yes",
+      "published": "Not verified",
+      "epss": "Not verified",
+      "notes": "",
+      "sources": [
+        {
+          "label": "Primary advisory / research",
+          "url": "https://github.com/mandiant/Vulnerability-Disclosures/blob/master/2026/MNDT-2026-0048.md"
+        },
+        {
+          "label": "CVE record",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-131914"
+        },
+        {
+          "label": "CISA KEV official mirror",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        }
+      ],
+      "owner": "Application security / DevSecOps",
+      "sla": "Immediate assessment; target 24h for exposed systems"
+    },
+    {
+      "cve": "CVE-2026-84869",
+      "vendor": "ConnectWise",
+      "technology": "ScreenConnect host client",
+      "asset": "Endpoint",
+      "date": "2026-11-23",
+      "event": "New exploitation report",
+      "evidence": "Confirmed exploitation",
+      "priority": "P1",
+      "score": 9.9,
+      "cvss_version": "Vendor score via Huntress; version unverified",
+      "summary": "Huntress reports malicious guest activity leading to file execution on technician endpoints.",
+      "impact": "Compromise of privileged MSP workstations and downstream customer access.",
+      "action": "Upgrade technician clients and relevant Access agents; remove file-transfer permission until fixed; investigate exposed endpoints.",
+      "hunt": "Review host client launching scripts and unexpected remote access clients.",
+      "affected": "Affected host clients and Access agents before 26.6.5",
+      "fixed": "26.6.5 or later supported fixed build",
+      "patch": "Available",
+      "kev": "Yes",
+      "published": "2026-09-08",
+      "epss": "Not verified",
+      "notes": "Previously KEV listed; public reporting dated 23 Nov; exact source publication time not established.",
+      "sources": [
+        {
+          "label": "Primary advisory / research",
+          "url": "https://www.huntress.com/blog/cve-2026-84869-screenconnect-technician-exploitation"
+        },
+        {
+          "label": "CVE record",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84869"
+        },
+        {
+          "label": "CISA KEV official mirror",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        }
+      ],
+      "owner": "Endpoint security / SOC",
+      "sla": "Immediate assessment; target 24h for exposed systems"
+    },
+    {
+      "cve": "CVE-2026-16232",
+      "vendor": "Check Point",
+      "technology": "SmartConsole / Security Management",
+      "asset": "Network",
+      "date": "2026-11-23",
+      "event": "New campaign evidence",
+      "evidence": "Confirmed exploitation",
+      "priority": "P1",
+      "score": 9.3,
+      "cvss_version": "Vendor score; version unverified",
+      "summary": "New GreyNoise reporting documents exploitation of an older management-plane authentication bypass.",
+      "impact": "Administrative access to firewall management and sensitive infrastructure data.",
+      "action": "Restrict management interface, apply vendor hotfix and investigate historic exposure; rotate compromised secrets.",
+      "hunt": "Review management task logs, unusual administrator activity and outbound connections.",
+      "affected": "R81.10, R81.20, R82, R82.10 and earlier affected configurations",
+      "fixed": "Vendor July 2026 security update / supported hotfix",
+      "patch": "Available",
+      "kev": "Yes",
+      "published": "2026-07 (vendor advisory)",
+      "epss": "Not verified",
+      "notes": "Vendor advisory: https://blog.checkpoint.com/security/security-advisory-action-required-active-exploitation-of-check-point-smartconsole-authentication-bypass-cve-2026-16232/amp/ ; KEV previously listed. Report date only; exact publication time not established.",
+      "sources": [
+        {
+          "label": "Primary advisory / research",
+          "url": "https://www.greynoise.io/blog/check-point-security-management-servers-intrusion-campaign"
+        },
+        {
+          "label": "CVE record",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16232"
+        },
+        {
+          "label": "CISA KEV official mirror",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        }
+      ],
+      "owner": "Network security",
+      "sla": "Immediate assessment; target 24h for exposed systems"
+    },
+    {
+      "cve": "CVE-2026-134624",
+      "vendor": "N-able",
+      "technology": "MailAssure / SpamExperts",
+      "asset": "Cloud",
+      "date": "2026-11-23",
+      "event": "CISA KEV addition",
+      "evidence": "Confirmed exploitation",
+      "priority": "P1",
+      "score": null,
+      "cvss_version": "",
+      "summary": "Server-side request forgery in LDAP synchronization check; authenticated API access required.",
+      "impact": "Internal service access and possible data exposure.",
+      "action": "Consult vendor advisory; limit API access, review tokens and restrict service egress where applicable.",
+      "hunt": "Review unusual LDAP checks, API usage and unexpected internal connections.",
+      "affected": "Not verified; consult vendor advisory.",
+      "fixed": "Confirm service-side remediation with vendor",
+      "patch": "Vendor-managed / verify",
+      "kev": "Yes",
+      "published": "Not verified",
+      "epss": "Not verified",
+      "notes": "",
+      "sources": [
+        {
+          "label": "Primary advisory / research",
+          "url": "https://me.n-able.com/s/security-advisory/aArVy0000002mrlKAA"
+        },
+        {
+          "label": "CVE record",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-134624"
+        },
+        {
+          "label": "CISA KEV official mirror",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        }
+      ],
+      "owner": "Cloud security",
+      "sla": "Immediate assessment; target 24h for exposed systems"
+    },
+    {
+      "cve": "CVE-2026-133968",
+      "vendor": "Project MONAI",
+      "technology": "MONAI Label",
+      "asset": "Application",
+      "date": "2026-11-23",
+      "event": "CISA KEV addition",
+      "evidence": "Confirmed exploitation",
+      "priority": "P1",
+      "score": null,
+      "cvss_version": "",
+      "summary": "Datastore upload path traversal permits writes outside expected storage.",
+      "impact": "Potential code execution, data tampering or service disruption.",
+      "action": "Restrict network access; enable authentication and least privilege; deploy confirmed fixed build.",
+      "hunt": "Check unexpected file writes, process changes and access logs.",
+      "affected": "Up to 0.8.5",
+      "fixed": "0.8.6 listed as patched; confirm released package or vendor fix",
+      "patch": "Fix identified / verify release",
+      "kev": "Yes",
+      "published": "2026-11-18 (GHSA)",
+      "epss": "Not verified",
+      "notes": "Advisory lists 0.8.6 but text refers to next release; verify availability before deployment.",
+      "sources": [
+        {
+          "label": "Primary advisory / research",
+          "url": "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-qc22-rmgc-vg94"
+        },
+        {
+          "label": "CVE record",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-133968"
+        },
+        {
+          "label": "CISA KEV official mirror",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        }
+      ],
+      "owner": "Application security / DevSecOps",
+      "sla": "Immediate assessment; target 24h for exposed systems"
+    }
+  ]
+}
