@@ -1,7 +1,7 @@
 {
   "schema": "cti-cumulative-v1",
   "baseline": "2026-11-23T00:01:00Z",
-  "as_of": "2026-11-26T12:09:16.509Z",
+  "as_of": "2026-11-26T12:38:49.827Z",
   "records": [
     {
       "cve": "CVE-2026-99362",
@@ -1082,6 +1082,41 @@
       ],
       "owner": "Windows Engineering / Endpoint Security / SOC",
       "sla": "Assess immediately; target 72 hours for high-risk systems"
+    },
+    {
+      "cve": "CVE-2026-123903",
+      "vendor": "Broadcom VMware",
+      "technology": "vCenter Directory Service",
+      "asset": "Infrastructure",
+      "date": "2026-11-25",
+      "event": "Rapid7 validates public authentication-bypass PoC",
+      "evidence": "Validated public PoC; active exploitation unconfirmed",
+      "priority": "P2",
+      "score": 9.8,
+      "cvss_version": "3.1",
+      "summary": "Rapid7 independently validated a public PoC achieving unauthenticated vCenter Directory Service access over LDAP.",
+      "impact": "Unauthorized access to virtualization management infrastructure; potential administrative compromise.",
+      "action": "Urgently patch vCenter outside normal cycles; restrict management and directory-service access to trusted networks.",
+      "hunt": "Review directory-service and SSO logs, unexpected privileged accounts, identity changes and anomalous management sessions; preserve appliance logs.",
+      "affected": "vCenter 9.1.x, 9.0.x, 8.0 and dependent VMware platforms; consult vendor matrix.",
+      "fixed": "9.1.2, 9.0.2.0300, 8.0 U3m; consult Broadcom matrix for dependent products.",
+      "patch": "Available; no vendor workaround; not Quick Patch eligible.",
+      "kev": "Not listed in 2026-11-25 catalogue",
+      "published": "2026-11-24",
+      "epss": "Not verified",
+      "notes": "Distinct from actively exploited CVE-2026-123890. No confirmed in-the-wild exploitation of this CVE.",
+      "sources": [
+        {
+          "label": "Broadcom VMSA-2026-0011",
+          "url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39626"
+        },
+        {
+          "label": "Rapid7 validated PoC",
+          "url": "https://www.rapid7.com/blog/post/etr-cve-2026-123903-critical-vmware-directory-service-authentication-bypass-affects-vcenter/"
+        }
+      ],
+      "owner": "Virtualization Platform / SOC",
+      "sla": "Immediate assessment; target 24h for reachable management systems"
     }
   ]
 }
