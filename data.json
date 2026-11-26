@@ -1,7 +1,7 @@
 {
   "schema": "cti-cumulative-v1",
   "baseline": "2026-11-23T00:01:00Z",
-  "as_of": "2026-11-26",
+  "as_of": "2026-11-26T08:50:34Z",
   "records": [
     {
       "cve": "CVE-2026-99362",
@@ -125,7 +125,7 @@
       "event": "CISA KEV addition",
       "evidence": "Confirmed exploitation",
       "priority": "P1",
-      "score": 10.0,
+      "score": 10,
       "cvss_version": "3.1",
       "summary": "Unauthenticated OS command injection in conferencing component.",
       "impact": "Execution of system commands; service disruption or compromise.",
@@ -203,7 +203,7 @@
       "event": "CISA KEV addition",
       "evidence": "Confirmed exploitation",
       "priority": "P1",
-      "score": 9.0,
+      "score": 9,
       "cvss_version": "3.1",
       "summary": "XML injection in the conferencing component with pre-staged content.",
       "impact": "System command execution and service compromise.",
@@ -482,7 +482,7 @@
       "impact": "Website compromise and data exposure.",
       "action": "Upgrade and secure the installer; check file permissions and compromise.",
       "hunt": "Inspect unexpected installation activity, configuration changes and web process activity.",
-      "affected": "Below 10.6.22; 11.0\u201311.3 before 11.3.22; 11.4 before 11.4.13",
+      "affected": "Below 10.6.22; 11.0–11.3 before 11.3.22; 11.4 before 11.4.13",
       "fixed": "10.6.22 / 11.3.22 / 11.4.13 or later supported release",
       "patch": "Available",
       "kev": "Yes",
@@ -700,6 +700,240 @@
       ],
       "owner": "Application security / DevSecOps",
       "sla": "Immediate assessment; target 24h for exposed systems"
+    },
+    {
+      "cve": "CVE-2026-120705",
+      "vendor": "GeoServer / OSGeo",
+      "technology": "GeoServer",
+      "asset": "Application",
+      "date": "2026-11-25",
+      "event": "Reported in-the-wild exploit validation",
+      "evidence": "Confirmed exploitation",
+      "priority": "P1",
+      "score": 8.6,
+      "cvss_version": "Version not independently verified",
+      "summary": "Unauthenticated WFS XML injection exposes readable files and may reach internal URLs.",
+      "impact": "Component of an unauthenticated chain from exposed WFS to administrator access and code execution as the GeoServer service account; possible geospatial data theft or alteration.",
+      "action": "Restrict external GeoServer/WFS access; upgrade to 3.0.2 or 2.28.6 (2.27.7 fixes the unsupported 2.27 branch); investigate before restoring access and rotate exposed credentials and secrets.",
+      "hunt": "Review WFS stored-query creation, invocation and deletion, abnormal XML errors, unexpected administrator sessions, JDBC configuration changes, uploaded files, Java child processes and outbound connections.",
+      "affected": "Vulnerable GeoServer releases, including 3.0.1 and 2.28.5; verify exact branch ranges with project advisories.",
+      "fixed": "3.0.2, 2.28.6, 2.27.7 (unsupported branch)",
+      "patch": "Available",
+      "kev": "Not listed in CISA catalog 2026.11.25",
+      "published": "Advisory details public 23–24 November 2026",
+      "epss": "Not verified",
+      "notes": "watchTowr honeypot exploit-validation activity reported 25 November; successful full-chain host compromise not established.",
+      "sources": [
+        {
+          "label": "Eye Security original research",
+          "url": "https://labs.eye.security/unauthenticated-remote-code-execution-vulnerability-in-geoserver/"
+        },
+        {
+          "label": "CryptoCat original five-CVE research",
+          "url": "https://cryptocat.me/blog/research/analysis/geoserver_preauth_rce/"
+        },
+        {
+          "label": "Exploitation reporting",
+          "url": "https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html"
+        }
+      ],
+      "owner": "Application security / GIS platform / SOC",
+      "sla": "Immediate assessment; target 24h"
+    },
+    {
+      "cve": "CVE-2026-129244",
+      "vendor": "GeoServer / OSGeo",
+      "technology": "GeoServer",
+      "asset": "Application",
+      "date": "2026-11-25",
+      "event": "Reported in-the-wild exploit validation",
+      "evidence": "Confirmed exploitation",
+      "priority": "P1",
+      "score": 6.9,
+      "cvss_version": "Version not independently verified",
+      "summary": "WFS stored-query error reveals the data directory path.",
+      "impact": "Component of an unauthenticated chain from exposed WFS to administrator access and code execution as the GeoServer service account; possible geospatial data theft or alteration.",
+      "action": "Restrict external GeoServer/WFS access; upgrade to 3.0.2 or 2.28.6 (2.27.7 fixes the unsupported 2.27 branch); investigate before restoring access and rotate exposed credentials and secrets.",
+      "hunt": "Review WFS stored-query creation, invocation and deletion, abnormal XML errors, unexpected administrator sessions, JDBC configuration changes, uploaded files, Java child processes and outbound connections.",
+      "affected": "Vulnerable GeoServer releases, including 3.0.1 and 2.28.5; verify exact branch ranges with project advisories.",
+      "fixed": "3.0.2, 2.28.6, 2.27.7 (unsupported branch)",
+      "patch": "Available",
+      "kev": "Not listed in CISA catalog 2026.11.25",
+      "published": "Advisory details public 23–24 November 2026",
+      "epss": "Not verified",
+      "notes": "watchTowr honeypot exploit-validation activity reported 25 November; successful full-chain host compromise not established.",
+      "sources": [
+        {
+          "label": "Eye Security original research",
+          "url": "https://labs.eye.security/unauthenticated-remote-code-execution-vulnerability-in-geoserver/"
+        },
+        {
+          "label": "CryptoCat original five-CVE research",
+          "url": "https://cryptocat.me/blog/research/analysis/geoserver_preauth_rce/"
+        },
+        {
+          "label": "Exploitation reporting",
+          "url": "https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html"
+        }
+      ],
+      "owner": "Application security / GIS platform / SOC",
+      "sla": "Immediate assessment; target 24h"
+    },
+    {
+      "cve": "CVE-2026-129243",
+      "vendor": "GeoServer / OSGeo",
+      "technology": "GeoServer",
+      "asset": "Application",
+      "date": "2026-11-24",
+      "event": "Public researcher-demonstrated RCE chain",
+      "evidence": "Researcher demonstrated",
+      "priority": "P2",
+      "score": 8.8,
+      "cvss_version": "Version not independently verified",
+      "summary": "Service-name authorization bypass permits protected OWS operations.",
+      "impact": "Component of an unauthenticated chain from exposed WFS to administrator access and code execution as the GeoServer service account; possible geospatial data theft or alteration.",
+      "action": "Restrict external GeoServer/WFS access; upgrade to 3.0.2 or 2.28.6 (2.27.7 fixes the unsupported 2.27 branch); investigate before restoring access and rotate exposed credentials and secrets.",
+      "hunt": "Review WFS stored-query creation, invocation and deletion, abnormal XML errors, unexpected administrator sessions, JDBC configuration changes, uploaded files, Java child processes and outbound connections.",
+      "affected": "Vulnerable GeoServer releases, including 3.0.1 and 2.28.5; verify exact branch ranges with project advisories.",
+      "fixed": "3.0.2, 2.28.6, 2.27.7 (unsupported branch)",
+      "patch": "Available",
+      "kev": "Not listed in CISA catalog 2026.11.25",
+      "published": "Advisory details public 23–24 November 2026",
+      "epss": "Not verified",
+      "notes": "Demonstrated chain component; no independent confirmation of malicious use of this individual CVE.",
+      "sources": [
+        {
+          "label": "Eye Security original research",
+          "url": "https://labs.eye.security/unauthenticated-remote-code-execution-vulnerability-in-geoserver/"
+        },
+        {
+          "label": "CryptoCat original five-CVE research",
+          "url": "https://cryptocat.me/blog/research/analysis/geoserver_preauth_rce/"
+        },
+        {
+          "label": "Exploitation reporting",
+          "url": "https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html"
+        }
+      ],
+      "owner": "Application security / GIS platform / SOC",
+      "sla": "Urgent; target 24–72h"
+    },
+    {
+      "cve": "CVE-2026-129245",
+      "vendor": "GeoServer / OSGeo",
+      "technology": "GeoServer",
+      "asset": "Application",
+      "date": "2026-11-24",
+      "event": "Public researcher-demonstrated RCE chain",
+      "evidence": "Researcher demonstrated",
+      "priority": "P2",
+      "score": 9.2,
+      "cvss_version": "Version not independently verified",
+      "summary": "Predictable remember-me signing configuration enables administrator session forgery when password digests are exposed.",
+      "impact": "Component of an unauthenticated chain from exposed WFS to administrator access and code execution as the GeoServer service account; possible geospatial data theft or alteration.",
+      "action": "Restrict external GeoServer/WFS access; upgrade to 3.0.2 or 2.28.6 (2.27.7 fixes the unsupported 2.27 branch); investigate before restoring access and rotate exposed credentials and secrets.",
+      "hunt": "Review WFS stored-query creation, invocation and deletion, abnormal XML errors, unexpected administrator sessions, JDBC configuration changes, uploaded files, Java child processes and outbound connections.",
+      "affected": "Vulnerable GeoServer releases, including 3.0.1 and 2.28.5; verify exact branch ranges with project advisories.",
+      "fixed": "3.0.2, 2.28.6, 2.27.7 (unsupported branch)",
+      "patch": "Available",
+      "kev": "Not listed in CISA catalog 2026.11.25",
+      "published": "Advisory details public 23–24 November 2026",
+      "epss": "Not verified",
+      "notes": "Demonstrated chain component; no independent confirmation of malicious use of this individual CVE.",
+      "sources": [
+        {
+          "label": "Eye Security original research",
+          "url": "https://labs.eye.security/unauthenticated-remote-code-execution-vulnerability-in-geoserver/"
+        },
+        {
+          "label": "CryptoCat original five-CVE research",
+          "url": "https://cryptocat.me/blog/research/analysis/geoserver_preauth_rce/"
+        },
+        {
+          "label": "Exploitation reporting",
+          "url": "https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html"
+        }
+      ],
+      "owner": "Application security / GIS platform / SOC",
+      "sla": "Urgent; target 24–72h"
+    },
+    {
+      "cve": "CVE-2026-129242",
+      "vendor": "GeoServer / OSGeo",
+      "technology": "GeoServer",
+      "asset": "Application",
+      "date": "2026-11-24",
+      "event": "Public researcher-demonstrated RCE chain",
+      "evidence": "Researcher demonstrated",
+      "priority": "P2",
+      "score": 8.6,
+      "cvss_version": "Version not independently verified",
+      "summary": "Administrator-controlled JDBC deserialization enables server-side code execution.",
+      "impact": "Component of an unauthenticated chain from exposed WFS to administrator access and code execution as the GeoServer service account; possible geospatial data theft or alteration.",
+      "action": "Restrict external GeoServer/WFS access; upgrade to 3.0.2 or 2.28.6 (2.27.7 fixes the unsupported 2.27 branch); investigate before restoring access and rotate exposed credentials and secrets.",
+      "hunt": "Review WFS stored-query creation, invocation and deletion, abnormal XML errors, unexpected administrator sessions, JDBC configuration changes, uploaded files, Java child processes and outbound connections.",
+      "affected": "Vulnerable GeoServer releases, including 3.0.1 and 2.28.5; verify exact branch ranges with project advisories.",
+      "fixed": "3.0.2, 2.28.6, 2.27.7 (unsupported branch)",
+      "patch": "Available",
+      "kev": "Not listed in CISA catalog 2026.11.25",
+      "published": "Advisory details public 23–24 November 2026",
+      "epss": "Not verified",
+      "notes": "Demonstrated chain component; no independent confirmation of malicious use of this individual CVE.",
+      "sources": [
+        {
+          "label": "Eye Security original research",
+          "url": "https://labs.eye.security/unauthenticated-remote-code-execution-vulnerability-in-geoserver/"
+        },
+        {
+          "label": "CryptoCat original five-CVE research",
+          "url": "https://cryptocat.me/blog/research/analysis/geoserver_preauth_rce/"
+        },
+        {
+          "label": "Exploitation reporting",
+          "url": "https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html"
+        }
+      ],
+      "owner": "Application security / GIS platform / SOC",
+      "sla": "Urgent; target 24–72h"
+    },
+    {
+      "cve": "CVE-2026-120704",
+      "vendor": "GeoServer / OSGeo",
+      "technology": "GeoServer",
+      "asset": "Application",
+      "date": "2026-11-24",
+      "event": "Public researcher-demonstrated RCE chain",
+      "evidence": "Researcher demonstrated",
+      "priority": "P2",
+      "score": 7.2,
+      "cvss_version": "Version not independently verified",
+      "summary": "Administrator-controlled JDBC configuration permits native code execution.",
+      "impact": "Component of an unauthenticated chain from exposed WFS to administrator access and code execution as the GeoServer service account; possible geospatial data theft or alteration.",
+      "action": "Restrict external GeoServer/WFS access; upgrade to 3.0.2 or 2.28.6 (2.27.7 fixes the unsupported 2.27 branch); investigate before restoring access and rotate exposed credentials and secrets.",
+      "hunt": "Review WFS stored-query creation, invocation and deletion, abnormal XML errors, unexpected administrator sessions, JDBC configuration changes, uploaded files, Java child processes and outbound connections.",
+      "affected": "Vulnerable GeoServer releases, including 3.0.1 and 2.28.5; verify exact branch ranges with project advisories.",
+      "fixed": "3.0.2, 2.28.6, 2.27.7 (unsupported branch)",
+      "patch": "Available",
+      "kev": "Not listed in CISA catalog 2026.11.25",
+      "published": "Advisory details public 23–24 November 2026",
+      "epss": "Not verified",
+      "notes": "Demonstrated chain component; no independent confirmation of malicious use of this individual CVE.",
+      "sources": [
+        {
+          "label": "Eye Security original research",
+          "url": "https://labs.eye.security/unauthenticated-remote-code-execution-vulnerability-in-geoserver/"
+        },
+        {
+          "label": "CryptoCat original five-CVE research",
+          "url": "https://cryptocat.me/blog/research/analysis/geoserver_preauth_rce/"
+        },
+        {
+          "label": "Exploitation reporting",
+          "url": "https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html"
+        }
+      ],
+      "owner": "Application security / GIS platform / SOC",
+      "sla": "Urgent; target 24–72h"
     }
   ]
 }
