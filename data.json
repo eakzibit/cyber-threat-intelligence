@@ -1,7 +1,7 @@
 {
   "schema": "cti-cumulative-v1",
   "baseline": "2026-11-23T00:01:00Z",
-  "as_of": "2026-11-26T11:09:31.521Z",
+  "as_of": "2026-11-26T12:09:16.509Z",
   "records": [
     {
       "cve": "CVE-2026-99362",
@@ -1043,6 +1043,45 @@
           "url": "https://research.splunk.com/stories/ruby2shell_-_cve-2026-132825/"
         }
       ]
+    },
+    {
+      "cve": "CVE-2026-119853",
+      "vendor": "Microsoft",
+      "technology": "Windows Remote Access API / RAS",
+      "asset": "Endpoint",
+      "date": "2026-11-23",
+      "event": "Core Security technical exploitation write-up",
+      "evidence": "Researcher-demonstrated local SYSTEM escalation; commercial exploit available",
+      "priority": "P2",
+      "score": 7.8,
+      "cvss_version": "3.1",
+      "summary": "Core Security documented a demonstrated local privilege escalation through unsafe DLL loading by a privileged Windows Remote Access service. Its commercial exploit was listed November 19; the detailed write-up was reported published November 23.",
+      "impact": "Local attacker can obtain SYSTEM, compromise protected data and establish persistence.",
+      "action": "Install November 10 Windows security updates or later applicable cumulative updates; verify OS builds.",
+      "hunt": "Investigate privileged svchost.exe loading unsigned or unexpected DLLs from user-writable locations, anomalous RAS activity and suspicious child processes.",
+      "affected": "Affected Windows 10, Windows 11 and Windows Server releases; local low-privilege code execution required.",
+      "fixed": "Release-specific November 2026 updates; examples Windows 10 22H2 build 19045.7846, Windows 11 25H2 build 26200.9974, Server 2022 build 20348.5870.",
+      "patch": "Available",
+      "kev": "Not listed in CISA catalogue 2026.11.25",
+      "published": "2026-11-10",
+      "epss": "Current FIRST score not verified",
+      "notes": "Not remote unauthenticated access. No confirmed in-the-wild exploitation. Detailed researcher blog inaccessible directly (403); primary commercial exploit listing verified.",
+      "sources": [
+        {
+          "label": "Core Security exploit listing",
+          "url": "https://www.coresecurity.com/core-labs/exploits/microsoft-windows-remote-access-api-elevation-of-privilege-vulnerability-exploit"
+        },
+        {
+          "label": "Microsoft advisory",
+          "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-119853"
+        },
+        {
+          "label": "November 24 reporting",
+          "url": "https://cybersecuritynews.com/windows-remote-access-api-flaw/"
+        }
+      ],
+      "owner": "Windows Engineering / Endpoint Security / SOC",
+      "sla": "Assess immediately; target 72 hours for high-risk systems"
     }
   ]
 }
