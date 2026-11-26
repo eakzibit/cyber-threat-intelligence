@@ -1,7 +1,7 @@
 {
   "schema": "cti-cumulative-v1",
   "baseline": "2026-11-23T00:01:00Z",
-  "as_of": "2026-11-26T09:38:35.938Z",
+  "as_of": "2026-11-26T11:09:31.521Z",
   "records": [
     {
       "cve": "CVE-2026-99362",
@@ -977,6 +977,72 @@
       ],
       "owner": "Java platform / Application owners / SOC",
       "sla": "24–72 hours; immediate assessment of internet-facing identity and CI/CD"
+    },
+    {
+      "asset": "Application",
+      "score": null,
+      "cvss_version": "Not verified",
+      "kev": "Not listed in 2026-11-25 catalogue",
+      "epss": "Not verified",
+      "owner": "Application Security / Platform Engineering / SOC",
+      "sla": "Immediate assessment; target 24 hours for exposed systems",
+      "cve": "CVE-2026-136716",
+      "vendor": "Drupal",
+      "technology": "Drupal core",
+      "date": "2026-11-25",
+      "event": "Vendor confirms active exploitation and releases follow-up installer fix",
+      "evidence": "Confirmed active exploitation",
+      "priority": "P1",
+      "summary": "Unauthenticated site takeover remains possible in unusual or incomplete installation states, including production sites, despite earlier installer fixes.",
+      "impact": "Site takeover, data compromise and malicious content or persistence.",
+      "action": "Upgrade to 10.6.23, 11.3.23 or 11.4.14; run update.php to execute the required update hook; secure the installer and investigate compromise.",
+      "hunt": "Review installer access and site logs, unexpected user 1 changes or activity; verify user 1 email and consider password reset. A currently safe state does not rule out past compromise.",
+      "affected": "<10.6.23; >=11.0.0 <11.3.23; >=11.4.0 <11.4.14; unsupported branches require migration.",
+      "fixed": "10.6.23, 11.3.23, 11.4.14 plus required update hook",
+      "patch": "Available",
+      "published": "2026-11-25",
+      "notes": "Drupal risk 21/25 is not CVSS. Remote installer accessibility and unusual installation state are prerequisites. Secure installer blocks this path.",
+      "sources": [
+        {
+          "label": "Drupal SA-CORE-2026-019",
+          "url": "https://www.drupal.org/sa-core-2026-019"
+        }
+      ]
+    },
+    {
+      "asset": "Application",
+      "score": null,
+      "cvss_version": "Not verified",
+      "kev": "Not listed in 2026-11-25 catalogue",
+      "epss": "Not verified",
+      "owner": "Application Security / Platform Engineering / SOC",
+      "sla": "Immediate assessment; target 24 hours for exposed systems",
+      "cve": "CVE-2026-132825",
+      "vendor": "Ruby",
+      "technology": "Ruby / Rails / Sinatra (Ruby2Shell)",
+      "date": "2026-11-23",
+      "event": "Splunk publishes defensive analytics for demonstrated Ruby2Shell exploitation path",
+      "evidence": "Researcher demonstration",
+      "priority": "P2",
+      "summary": "Ruby case-conversion heap overflow can be reached before authentication in default Rails and classic Sinatra; researchers report demonstrated RCE. Splunk released hunting analytics.",
+      "impact": "Application worker compromise, data theft or service disruption.",
+      "action": "Upgrade Ruby to 3.3.14, 3.4.13 or 4.0.10 and restart/redeploy workers and images; migrate EOL Ruby.",
+      "hunt": "Use Splunk Ruby2Shell analytics; correlate suspicious web requests, Ruby worker crashes, unexpected child processes and outbound connections. A request match alone does not prove compromise.",
+      "affected": "Affected Ruby releases from 2.4; 3.3 before 3.3.14, 3.4 before 3.4.13, 4.0 before 4.0.10; older branches EOL.",
+      "fixed": "3.3.14, 3.4.13, 4.0.10",
+      "patch": "Available",
+      "published": "2026-11-19",
+      "notes": "Legacy single-byte encoding case conversion causes heap corruption. Public remote RCE PoC release not verified; no confirmed malicious exploitation established.",
+      "sources": [
+        {
+          "label": "Veria Labs original research",
+          "url": "https://verialabs.com/ruby2shell/"
+        },
+        {
+          "label": "Splunk defensive analytics, Nov 23",
+          "url": "https://research.splunk.com/stories/ruby2shell_-_cve-2026-132825/"
+        }
+      ]
     }
   ]
 }
