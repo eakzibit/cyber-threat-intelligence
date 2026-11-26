@@ -1,7 +1,7 @@
 {
   "schema": "cti-cumulative-v1",
   "baseline": "2026-11-23T00:01:00Z",
-  "as_of": "2026-11-26T12:38:49.827Z",
+  "as_of": "2026-11-26T14:17:57.267Z",
   "records": [
     {
       "cve": "CVE-2026-99362",
@@ -667,23 +667,23 @@
       "vendor": "Project MONAI",
       "technology": "MONAI Label",
       "asset": "Application",
-      "date": "2026-11-23",
-      "event": "CISA KEV addition",
+      "date": "2026-11-25",
+      "event": "Vendor security release 0.8.7 supersedes deployment recommendation",
       "evidence": "Confirmed exploitation",
       "priority": "P1",
       "score": null,
       "cvss_version": "",
-      "summary": "Datastore upload path traversal permits writes outside expected storage.",
+      "summary": "Actively exploited datastore traversal fixed in 0.8.6; vendor now directs all servers to 0.8.7 because additional critical vulnerabilities affect 0.8.6.",
       "impact": "Potential code execution, data tampering or service disruption.",
-      "action": "Restrict network access; enable authentication and least privilege; deploy confirmed fixed build.",
+      "action": "Upgrade all MONAI Label servers to 0.8.7; restrict network access, enable authentication, use least privilege and investigate compromise.",
       "hunt": "Check unexpected file writes, process changes and access logs.",
       "affected": "Up to 0.8.5",
-      "fixed": "0.8.6 listed as patched; confirm released package or vendor fix",
-      "patch": "Fix identified / verify release",
+      "fixed": "0.8.6 fixes CVE-2026-133968; deploy 0.8.7 or later vendor-supported secure release",
+      "patch": "Available",
       "kev": "Yes",
       "published": "2026-11-18 (GHSA)",
       "epss": "Not verified",
-      "notes": "Advisory lists 0.8.6 but text refers to next release; verify availability before deployment.",
+      "notes": "0.8.7 fixes separate critical task-process RCE affecting 0.6.0–0.8.6; do not attribute exploitation of that separate flaw to this CVE.",
       "sources": [
         {
           "label": "Primary advisory / research",
@@ -696,10 +696,21 @@
         {
           "label": "CISA KEV official mirror",
           "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        },
+        {
+          "label": "Vendor 0.8.7 security release",
+          "url": "https://github.com/Project-MONAI/MONAILabel/releases/tag/0.8.7"
         }
       ],
       "owner": "Application security / DevSecOps",
-      "sla": "Immediate assessment; target 24h for exposed systems"
+      "sla": "Immediate assessment; target 24h for exposed systems",
+      "history": [
+        {
+          "date": "2026-11-23",
+          "event": "CISA KEV addition",
+          "summary": "Datastore upload path traversal permits writes outside expected storage."
+        }
+      ]
     },
     {
       "cve": "CVE-2026-120705",
