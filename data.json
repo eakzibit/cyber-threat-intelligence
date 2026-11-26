@@ -1,7 +1,7 @@
 {
   "schema": "cti-cumulative-v1",
   "baseline": "2026-11-23T00:01:00Z",
-  "as_of": "2026-11-26T14:17:57.267Z",
+  "as_of": "2026-11-26T17:47:51.699Z",
   "records": [
     {
       "cve": "CVE-2026-99362",
@@ -82,16 +82,16 @@
       "vendor": "Mitel",
       "technology": "MiCollab",
       "asset": "Application",
-      "date": "2026-11-25",
-      "event": "CISA KEV addition",
+      "date": "2026-11-26",
+      "event": "Newly reported APEX Labs pre-disclosure intrusion and enterprise compromise evidence",
       "evidence": "Confirmed exploitation",
       "priority": "P1",
       "score": 5.3,
       "cvss_version": "3.1",
-      "summary": "Authentication bypass in conferencing component.",
+      "summary": "Authentication bypass in conferencing component. Accenture APEX Labs reports pre-patch exploitation of the advisory's vulnerability set, followed by LDAP credential theft, directory access and data exfiltration; exact use of each individual CVE is not established.",
       "impact": "Unauthorised application actions; potential chain with other MiCollab flaws.",
-      "action": "Restrict external access to AWV; apply Mitel patch or upgrade; assess compromise.",
-      "hunt": "Review access events and unexpected application changes.",
+      "action": "Preserve forensic images before changes; restrict AWV including proxy-published paths; apply KB000129195; investigate directory compromise and rotate exposed credentials.",
+      "hunt": "Compare upstream proxy/WAF and host logs; hunt 204.76.203[.]204 from Nov 6 and 204.76.203[.]216 from Nov 12, unexpected web scripts, outbound HTTPS uploads, LDAP connector logons and anomalous Kerberos tickets.",
       "affected": "10.3 (10.3.0.18) and earlier",
       "fixed": "10.3.0.18 plus KB000129195 patch or later fixed release",
       "patch": "Available",
@@ -111,26 +111,41 @@
         {
           "label": "CISA KEV official mirror",
           "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        },
+        {
+          "label": "Accenture APEX Labs primary incident research",
+          "url": "https://accenture.github.io/cyber-intelligence/micollab-exploitation/"
+        },
+        {
+          "label": "Dated campaign reporting, 26 November",
+          "url": "https://www.securityweek.com/mitel-micollab-zero-days-exploited-in-suspected-ai-assisted-attacks/"
         }
       ],
       "owner": "Application security / DevSecOps",
-      "sla": "Immediate assessment; target 24h for exposed systems"
+      "sla": "Immediate assessment; target 24h for exposed systems",
+      "history": [
+        {
+          "date": "2026-11-25",
+          "event": "CISA KEV addition",
+          "summary": "Authentication bypass in conferencing component."
+        }
+      ]
     },
     {
       "cve": "CVE-2026-133323",
       "vendor": "Mitel",
       "technology": "MiCollab",
       "asset": "Application",
-      "date": "2026-11-25",
-      "event": "CISA KEV addition",
+      "date": "2026-11-26",
+      "event": "Newly reported APEX Labs pre-disclosure intrusion and enterprise compromise evidence",
       "evidence": "Confirmed exploitation",
       "priority": "P1",
       "score": 10,
       "cvss_version": "3.1",
-      "summary": "Unauthenticated OS command injection in conferencing component.",
+      "summary": "Unauthenticated OS command injection in conferencing component. Accenture APEX Labs reports pre-patch exploitation of the advisory's vulnerability set, followed by LDAP credential theft, directory access and data exfiltration; exact use of each individual CVE is not established.",
       "impact": "Execution of system commands; service disruption or compromise.",
-      "action": "Restrict external access to AWV; apply Mitel patch or upgrade; assess compromise.",
-      "hunt": "Review abnormal child processes and outbound connections.",
+      "action": "Preserve forensic images before changes; restrict AWV including proxy-published paths; apply KB000129195; investigate directory compromise and rotate exposed credentials.",
+      "hunt": "Compare upstream proxy/WAF and host logs; hunt 204.76.203[.]204 from Nov 6 and 204.76.203[.]216 from Nov 12, unexpected web scripts, outbound HTTPS uploads, LDAP connector logons and anomalous Kerberos tickets.",
       "affected": "10.3 (10.3.0.18) and earlier",
       "fixed": "10.3.0.18 plus KB000129195 patch or later fixed release",
       "patch": "Available",
@@ -150,26 +165,41 @@
         {
           "label": "CISA KEV official mirror",
           "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        },
+        {
+          "label": "Accenture APEX Labs primary incident research",
+          "url": "https://accenture.github.io/cyber-intelligence/micollab-exploitation/"
+        },
+        {
+          "label": "Dated campaign reporting, 26 November",
+          "url": "https://www.securityweek.com/mitel-micollab-zero-days-exploited-in-suspected-ai-assisted-attacks/"
         }
       ],
       "owner": "Application security / DevSecOps",
-      "sla": "Immediate assessment; target 24h for exposed systems"
+      "sla": "Immediate assessment; target 24h for exposed systems",
+      "history": [
+        {
+          "date": "2026-11-25",
+          "event": "CISA KEV addition",
+          "summary": "Unauthenticated OS command injection in conferencing component."
+        }
+      ]
     },
     {
       "cve": "CVE-2026-133311",
       "vendor": "Mitel",
       "technology": "MiCollab",
       "asset": "Application",
-      "date": "2026-11-25",
-      "event": "CISA KEV addition",
+      "date": "2026-11-26",
+      "event": "Newly reported APEX Labs pre-disclosure intrusion and enterprise compromise evidence",
       "evidence": "Confirmed exploitation",
       "priority": "P1",
       "score": 5.9,
       "cvss_version": "3.1",
-      "summary": "Weak authentication permits unauthorised access to certain sensitive information.",
+      "summary": "Weak authentication permits unauthorised access to certain sensitive information. Accenture APEX Labs reports pre-patch exploitation of the advisory's vulnerability set, followed by LDAP credential theft, directory access and data exfiltration; exact use of each individual CVE is not established.",
       "impact": "Information exposure and potential chaining.",
-      "action": "Restrict external access to AWV; apply Mitel patch or upgrade; assess compromise.",
-      "hunt": "Review unusual access to conferencing resources.",
+      "action": "Preserve forensic images before changes; restrict AWV including proxy-published paths; apply KB000129195; investigate directory compromise and rotate exposed credentials.",
+      "hunt": "Compare upstream proxy/WAF and host logs; hunt 204.76.203[.]204 from Nov 6 and 204.76.203[.]216 from Nov 12, unexpected web scripts, outbound HTTPS uploads, LDAP connector logons and anomalous Kerberos tickets.",
       "affected": "10.3 (10.3.0.18) and earlier",
       "fixed": "10.3.0.18 plus KB000129195 patch or later fixed release",
       "patch": "Available",
@@ -189,26 +219,41 @@
         {
           "label": "CISA KEV official mirror",
           "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        },
+        {
+          "label": "Accenture APEX Labs primary incident research",
+          "url": "https://accenture.github.io/cyber-intelligence/micollab-exploitation/"
+        },
+        {
+          "label": "Dated campaign reporting, 26 November",
+          "url": "https://www.securityweek.com/mitel-micollab-zero-days-exploited-in-suspected-ai-assisted-attacks/"
         }
       ],
       "owner": "Application security / DevSecOps",
-      "sla": "Immediate assessment; target 24h for exposed systems"
+      "sla": "Immediate assessment; target 24h for exposed systems",
+      "history": [
+        {
+          "date": "2026-11-25",
+          "event": "CISA KEV addition",
+          "summary": "Weak authentication permits unauthorised access to certain sensitive information."
+        }
+      ]
     },
     {
       "cve": "CVE-2026-133303",
       "vendor": "Mitel",
       "technology": "MiCollab",
       "asset": "Application",
-      "date": "2026-11-25",
-      "event": "CISA KEV addition",
+      "date": "2026-11-26",
+      "event": "Newly reported APEX Labs pre-disclosure intrusion and enterprise compromise evidence",
       "evidence": "Confirmed exploitation",
       "priority": "P1",
       "score": 9,
       "cvss_version": "3.1",
-      "summary": "XML injection in the conferencing component with pre-staged content.",
+      "summary": "XML injection in the conferencing component with pre-staged content. Accenture APEX Labs reports pre-patch exploitation of the advisory's vulnerability set, followed by LDAP credential theft, directory access and data exfiltration; exact use of each individual CVE is not established.",
       "impact": "System command execution and service compromise.",
-      "action": "Restrict external access to AWV; apply Mitel patch or upgrade; assess compromise.",
-      "hunt": "Review conferencing requests and unexpected processes.",
+      "action": "Preserve forensic images before changes; restrict AWV including proxy-published paths; apply KB000129195; investigate directory compromise and rotate exposed credentials.",
+      "hunt": "Compare upstream proxy/WAF and host logs; hunt 204.76.203[.]204 from Nov 6 and 204.76.203[.]216 from Nov 12, unexpected web scripts, outbound HTTPS uploads, LDAP connector logons and anomalous Kerberos tickets.",
       "affected": "10.3 (10.3.0.18) and earlier",
       "fixed": "10.3.0.18 plus KB000129195 patch or later fixed release",
       "patch": "Available",
@@ -228,26 +273,41 @@
         {
           "label": "CISA KEV official mirror",
           "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        },
+        {
+          "label": "Accenture APEX Labs primary incident research",
+          "url": "https://accenture.github.io/cyber-intelligence/micollab-exploitation/"
+        },
+        {
+          "label": "Dated campaign reporting, 26 November",
+          "url": "https://www.securityweek.com/mitel-micollab-zero-days-exploited-in-suspected-ai-assisted-attacks/"
         }
       ],
       "owner": "Application security / DevSecOps",
-      "sla": "Immediate assessment; target 24h for exposed systems"
+      "sla": "Immediate assessment; target 24h for exposed systems",
+      "history": [
+        {
+          "date": "2026-11-25",
+          "event": "CISA KEV addition",
+          "summary": "XML injection in the conferencing component with pre-staged content."
+        }
+      ]
     },
     {
       "cve": "CVE-2026-133275",
       "vendor": "Mitel",
       "technology": "MiCollab",
       "asset": "Application",
-      "date": "2026-11-25",
-      "event": "CISA KEV addition",
+      "date": "2026-11-26",
+      "event": "Newly reported APEX Labs pre-disclosure intrusion and enterprise compromise evidence",
       "evidence": "Confirmed exploitation",
       "priority": "P1",
       "score": 5.3,
       "cvss_version": "3.1",
-      "summary": "Unrestricted file uploads in the conferencing component.",
+      "summary": "Unrestricted file uploads in the conferencing component. Accenture APEX Labs reports pre-patch exploitation of the advisory's vulnerability set, followed by LDAP credential theft, directory access and data exfiltration; exact use of each individual CVE is not established.",
       "impact": "Unauthorised file placement; risk increases in combination with other flaws.",
-      "action": "Restrict external access to AWV; apply Mitel patch or upgrade; assess compromise.",
-      "hunt": "Review unexpected uploads and file integrity.",
+      "action": "Preserve forensic images before changes; restrict AWV including proxy-published paths; apply KB000129195; investigate directory compromise and rotate exposed credentials.",
+      "hunt": "Compare upstream proxy/WAF and host logs; hunt 204.76.203[.]204 from Nov 6 and 204.76.203[.]216 from Nov 12, unexpected web scripts, outbound HTTPS uploads, LDAP connector logons and anomalous Kerberos tickets.",
       "affected": "10.3 (10.3.0.18) and earlier",
       "fixed": "10.3.0.18 plus KB000129195 patch or later fixed release",
       "patch": "Available",
@@ -267,10 +327,25 @@
         {
           "label": "CISA KEV official mirror",
           "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        },
+        {
+          "label": "Accenture APEX Labs primary incident research",
+          "url": "https://accenture.github.io/cyber-intelligence/micollab-exploitation/"
+        },
+        {
+          "label": "Dated campaign reporting, 26 November",
+          "url": "https://www.securityweek.com/mitel-micollab-zero-days-exploited-in-suspected-ai-assisted-attacks/"
         }
       ],
       "owner": "Application security / DevSecOps",
-      "sla": "Immediate assessment; target 24h for exposed systems"
+      "sla": "Immediate assessment; target 24h for exposed systems",
+      "history": [
+        {
+          "date": "2026-11-25",
+          "event": "CISA KEV addition",
+          "summary": "Unrestricted file uploads in the conferencing component."
+        }
+      ]
     },
     {
       "cve": "CVE-2026-103406",
