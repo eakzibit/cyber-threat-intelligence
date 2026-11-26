@@ -1,7 +1,7 @@
 {
   "schema": "cti-cumulative-v1",
   "baseline": "2026-11-23T00:01:00Z",
-  "as_of": "2026-11-26T17:47:51.699Z",
+  "as_of": "2026-11-26T22:21:38.165Z",
   "records": [
     {
       "cve": "CVE-2026-99362",
@@ -1203,6 +1203,68 @@
       ],
       "owner": "Virtualization Platform / SOC",
       "sla": "Immediate assessment; target 24h for reachable management systems"
+    },
+    {
+      "cve": "CVE-2026-46300",
+      "vendor": "Palo Alto Networks / upstream open source",
+      "technology": "PAN-OS",
+      "asset": "Network",
+      "date": "2026-11-24",
+      "event": "Vendor confirms exploited PAN-OS chain and fixes",
+      "evidence": "Confirmed active exploitation",
+      "priority": "P1",
+      "score": null,
+      "cvss_version": null,
+      "summary": "Palo Alto Networks confirms Fragnesia local privilege escalation exploitation chained with PHP2Shell against internet-exposed PAN-OS management interfaces.",
+      "impact": "Firewall management-plane compromise and elevated privileges",
+      "action": "Restrict management access to trusted internal IPs and immediately upgrade exposed devices to a vendor-fixed release.",
+      "hunt": "Review management access, configuration changes, administrative accounts and unexpected activity; preserve forensic evidence.",
+      "affected": "PAN-OS releases before applicable vendor fixes",
+      "fixed": "See PAN-SA-2026-0015 branch-specific matrix",
+      "patch": "Available",
+      "kev": null,
+      "published": null,
+      "epss": null,
+      "notes": "Vendor bulletin timeline dates initial publication to 2026-11-24; exact exploitation onset not verified.",
+      "sources": [
+        {
+          "label": "Palo Alto Networks primary bulletin",
+          "url": "https://security.paloaltonetworks.com/PAN-SA-2026-0015"
+        }
+      ],
+      "owner": "Network Security / SOC / Incident Response",
+      "sla": "Immediate assessment and containment; target patch within 24 hours"
+    },
+    {
+      "cve": "CVE-2026-109618",
+      "vendor": "Palo Alto Networks / upstream open source",
+      "technology": "PAN-OS",
+      "asset": "Network",
+      "date": "2026-11-24",
+      "event": "Vendor confirms exploited PAN-OS chain and fixes",
+      "evidence": "Confirmed active exploitation",
+      "priority": "P1",
+      "score": null,
+      "cvss_version": null,
+      "summary": "Palo Alto Networks confirms PHP2Shell exploitation as the initial access path in observed Fragnesia attacks against PAN-OS management interfaces.",
+      "impact": "Firewall management-plane compromise and elevated privileges",
+      "action": "Restrict management access to trusted internal IPs and immediately upgrade exposed devices to a vendor-fixed release.",
+      "hunt": "Review management access, configuration changes, administrative accounts and unexpected activity; preserve forensic evidence.",
+      "affected": "PAN-OS releases before applicable vendor fixes",
+      "fixed": "See PAN-SA-2026-0015 branch-specific matrix",
+      "patch": "Available",
+      "kev": null,
+      "published": null,
+      "epss": null,
+      "notes": "Vendor bulletin timeline dates initial publication to 2026-11-24; exact exploitation onset not verified.",
+      "sources": [
+        {
+          "label": "Palo Alto Networks primary bulletin",
+          "url": "https://security.paloaltonetworks.com/PAN-SA-2026-0015"
+        }
+      ],
+      "owner": "Network Security / SOC / Incident Response",
+      "sla": "Immediate assessment and containment; target patch within 24 hours"
     }
   ]
 }
