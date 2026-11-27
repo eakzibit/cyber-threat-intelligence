@@ -1,7 +1,7 @@
 {
   "schema": "cti-cumulative-v1",
   "baseline": "2026-11-23T00:01:00Z",
-  "as_of": "2026-11-27T17:20:41.592Z",
+  "as_of": "2026-11-27T20:21:42.450Z",
   "records": [
     {
       "cve": "CVE-2026-99362",
@@ -1309,6 +1309,41 @@
       ],
       "owner": "Endpoint Security / Privacy Engineering",
       "sla": "Proposed: inventory within 24 hours; update high-risk users within 24 hours, others within 72 hours"
+    },
+    {
+      "cve": "CVE-2026-123890",
+      "vendor": "Broadcom",
+      "technology": "VMware vCenter",
+      "asset": "Infrastructure",
+      "date": "2026-11-23",
+      "event": "Public researcher-validated authentication bypass PoC",
+      "evidence": "Researcher lab demonstration; prior confirmed in-the-wild exploitation",
+      "priority": "P1",
+      "score": 9.8,
+      "cvss_version": "3.1",
+      "summary": "A public PoC author reports successful unauthenticated session-key disclosure and administrator authentication against standalone vmdird from vCenter 8.0 U3k.",
+      "impact": "Virtual infrastructure administrative compromise, directory and signing-key theft, persistence.",
+      "action": "Patch vCenter; restrict management access and investigate prior compromise. Use builds also addressing CVE-2026-123903 where applicable.",
+      "hunt": "Unexpected SSO administrators, directory database access, SSH changes, anomalous management connections and SAML activity.",
+      "affected": "vCenter 9.1.x, 9.0.x, 8.0 and 7.0 affected; consult vendor matrix.",
+      "fixed": "Original CVE: 9.1.1.0200, 9.0.2.0200, 8.0 U3m; 7.0 contact extended support. For separate CVE-2026-123903 use 9.1.2 or 9.0.2.0300 on 9.x.",
+      "patch": "Available",
+      "kev": "Yes",
+      "published": "2026-11-19",
+      "epss": null,
+      "notes": "KEV added Nov 20 before baseline. Nov 23 public PoC is the qualifying development. Author validation on standalone component, not independent full-appliance validation.",
+      "sources": [
+        {
+          "label": "Researcher PoC documentation",
+          "url": "https://github.com/dinosn/CVE-2026-123890"
+        },
+        {
+          "label": "Broadcom VMSA-2026-0009",
+          "url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/VMSA-2026-0009--VMware-vCenter--Tools--and-SDDC-Manager-updates-address-multiple-vulnerabilities--CVE-2026-123890--CVE-2026-123891--CVE-2026-123892--CVE-2026-123893--CVE-2026-123894-/39495"
+        }
+      ],
+      "owner": "Virtualisation Infrastructure / SOC",
+      "sla": "Emergency: assess immediately, patch within 24 hours"
     }
   ]
 }
