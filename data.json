@@ -1,7 +1,7 @@
 {
   "schema": "cti-cumulative-v1",
   "baseline": "2026-11-23T00:01:00Z",
-  "as_of": "2026-11-26T22:21:38.165Z",
+  "as_of": "2026-11-27T09:12:58.063Z",
   "records": [
     {
       "cve": "CVE-2026-99362",
@@ -1265,6 +1265,41 @@
       ],
       "owner": "Network Security / SOC / Incident Response",
       "sla": "Immediate assessment and containment; target patch within 24 hours"
+    },
+    {
+      "cve": "CVE-2026-92027",
+      "vendor": "Mozilla / Tor Project",
+      "technology": "Gecko DOM Streams / Tor Browser",
+      "asset": "Endpoint",
+      "date": "2026-11-26",
+      "event": "Calif publishes demonstrated Tor Browser deanonymisation chain",
+      "evidence": "Researcher demonstration; public technical PoC; no confirmed active exploitation established",
+      "priority": "P2",
+      "score": null,
+      "cvss_version": null,
+      "summary": "Calif demonstrated one-click public-source IP disclosure against Tor Browser 15.0.22 on Linux using a Gecko use-after-free and privileged browser navigation.",
+      "impact": "Loss of network anonymity; potential source, journalist or activist exposure. Full parent-process code execution was not demonstrated.",
+      "action": "Update Tor Browser to a current supported release; verify Firefox ESR patch levels and restrict direct egress on high-risk anonymity workstations.",
+      "hunt": "Review authorised endpoint and network telemetry for unexpected direct browser egress, suspicious page visits and browser crashes; preserve evidence if suspected.",
+      "affected": "Demonstrated on Tor Browser 15.0.22, Linux, default settings; broader version scope requires vendor validation.",
+      "fixed": "Tor Browser 15.0.23 reported as fixed; use current supported release.",
+      "patch": "Available",
+      "kev": "Not listed in checked 2026.11.25 catalogue",
+      "published": "2026-09-15",
+      "epss": null,
+      "notes": "User interaction required. Research publication 26 November; original fix predates baseline. No independent retest performed.",
+      "sources": [
+        {
+          "label": "Calif primary research",
+          "url": "https://calif.io/research/tortilla-with-onion"
+        },
+        {
+          "label": "Release context",
+          "url": "https://runtimewire.com/article/calif-tor-browser-one-click-ip-leak-research"
+        }
+      ],
+      "owner": "Endpoint Security / Privacy Engineering",
+      "sla": "Proposed: inventory within 24 hours; update high-risk users within 24 hours, others within 72 hours"
     }
   ]
 }
