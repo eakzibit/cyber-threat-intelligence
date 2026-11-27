@@ -1,0 +1,18 @@
+{
+  "schema": "cti-daily-v1",
+  "baseline": "2026-11-23T00:01:00Z",
+  "as_of": "2026-11-27T19:00:00Z",
+  "days": [
+    {
+      "date": "2026-11-27",
+      "checked_at": "2026-11-27T19:00:00Z",
+      "register_as_of": "2026-11-27T17:20:41.592Z",
+      "total": 32,
+      "p1": 23,
+      "kev": 17,
+      "ai": null,
+      "ai_status": "Unavailable: source API could not be retrieved in this session",
+      "coverage": "Partial: register snapshot only; no complete global feed reconciliation"
+    }
+  ]
+}
