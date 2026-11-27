@@ -1,7 +1,7 @@
 {
   "schema": "cti-cumulative-v1",
   "baseline": "2026-11-23T00:01:00Z",
-  "as_of": "2026-11-27T09:12:58.063Z",
+  "as_of": "2026-11-27T17:20:41.592Z",
   "records": [
     {
       "cve": "CVE-2026-99362",
@@ -743,22 +743,22 @@
       "technology": "MONAI Label",
       "asset": "Application",
       "date": "2026-11-25",
-      "event": "Vendor security release 0.8.7 supersedes deployment recommendation",
+      "event": "Vendor security release 0.8.8 supersedes 0.8.7 deployment guidance",
       "evidence": "Confirmed exploitation",
       "priority": "P1",
       "score": null,
       "cvss_version": "",
-      "summary": "Actively exploited datastore traversal fixed in 0.8.6; vendor now directs all servers to 0.8.7 because additional critical vulnerabilities affect 0.8.6.",
+      "summary": "Previously exploited datastore traversal remains fixed in 0.8.6; MONAI Label 0.8.8 fixes additional critical vulnerabilities affecting 0.8.7 and is the vendor-recommended deployment.",
       "impact": "Potential code execution, data tampering or service disruption.",
-      "action": "Upgrade all MONAI Label servers to 0.8.7; restrict network access, enable authentication, use least privilege and investigate compromise.",
+      "action": "Upgrade servers, Python clients and 3D Slicer plugins to 0.8.8 or a later supported secure release; restrict access, enable authentication and investigate compromise.",
       "hunt": "Check unexpected file writes, process changes and access logs.",
       "affected": "Up to 0.8.5",
-      "fixed": "0.8.6 fixes CVE-2026-133968; deploy 0.8.7 or later vendor-supported secure release",
+      "fixed": "0.8.6 fixes this CVE; deploy 0.8.8 or later supported secure release",
       "patch": "Available",
       "kev": "Yes",
       "published": "2026-11-18 (GHSA)",
       "epss": "Not verified",
-      "notes": "0.8.7 fixes separate critical task-process RCE affecting 0.6.0–0.8.6; do not attribute exploitation of that separate flaw to this CVE.",
+      "notes": "Additional critical flaws in 0.8.7 are separate vulnerabilities; their exploitation in the wild is not established.",
       "sources": [
         {
           "label": "Primary advisory / research",
@@ -775,6 +775,10 @@
         {
           "label": "Vendor 0.8.7 security release",
           "url": "https://github.com/Project-MONAI/MONAILabel/releases/tag/0.8.7"
+        },
+        {
+          "label": "Vendor 0.8.8 security release",
+          "url": "https://github.com/Project-MONAI/MONAILabel/releases/tag/0.8.8"
         }
       ],
       "owner": "Application security / DevSecOps",
@@ -784,6 +788,11 @@
           "date": "2026-11-23",
           "event": "CISA KEV addition",
           "summary": "Datastore upload path traversal permits writes outside expected storage."
+        },
+        {
+          "date": "2026-11-25",
+          "event": "Vendor security release 0.8.7 supersedes deployment recommendation",
+          "summary": "Actively exploited datastore traversal fixed in 0.8.6; vendor now directs all servers to 0.8.7 because additional critical vulnerabilities affect 0.8.6."
         }
       ]
     },
