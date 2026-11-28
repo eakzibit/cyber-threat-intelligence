@@ -1,7 +1,7 @@
 {
   "schema": "cti-cumulative-v1",
   "baseline": "2026-11-23T00:01:00Z",
-  "as_of": "2026-11-28T01:25:42.014Z",
+  "as_of": "2026-11-28T12:17:12.180Z",
   "records": [
     {
       "cve": "CVE-2026-99362",
@@ -1386,6 +1386,41 @@
       ],
       "owner": "Virtualisation Infrastructure / SOC",
       "sla": "Emergency: assess immediately, patch within 24 hours"
+    },
+    {
+      "cve": "CVE-2026-137995",
+      "vendor": "FOG Project",
+      "technology": "FOG Project",
+      "asset": "Infrastructure",
+      "date": "2026-11-27",
+      "event": "CVE publication documenting practical credential disclosure chain",
+      "evidence": "Vendor-documented practical exploitation chain",
+      "priority": "P2",
+      "score": null,
+      "cvss_version": null,
+      "summary": "Unauthenticated callers knowing a tasked host MAC can obtain a host token and retrieve plaintext AD join credentials and Windows product keys during deployment.",
+      "impact": "Credential exposure and potential domain abuse subject to join-account privileges.",
+      "action": "Upgrade to 1.6.0.119 or later; restrict deployment interfaces and configure FOG_HOSTKEY_ALLOWED_SOURCES narrowly. Rotate exposed credentials.",
+      "hunt": "Review hostgetkey and hostinfo access, deployment tasks, source networks and AD join-account activity.",
+      "affected": "Before 1.6.0.119",
+      "fixed": "1.6.0.119",
+      "patch": "Available",
+      "kev": "No",
+      "published": "2026-11-27",
+      "epss": null,
+      "notes": "No confirmed in-the-wild exploitation. Vendor fix committed 2026-11-09. Requires knowledge of a host MAC with a task.",
+      "sources": [
+        {
+          "label": "Vendor fix",
+          "url": "https://github.com/FOGProject/fogproject/commit/156db0fcc6d1384ece28ed515bbf954c808ab49f"
+        },
+        {
+          "label": "CVE advisory",
+          "url": "https://github.com/advisories/GHSA-rwgg-8vh6-2v27"
+        }
+      ],
+      "owner": "Endpoint Deployment / Identity / SOC",
+      "sla": "Assess within 24 hours; remediate within 48 hours"
     }
   ]
 }
