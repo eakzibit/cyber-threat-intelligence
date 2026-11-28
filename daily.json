@@ -1,7 +1,7 @@
 {
   "schema": "cti-daily-v1",
   "baseline": "2026-11-23T00:01:00Z",
-  "as_of": "2026-11-27T19:00:00Z",
+  "as_of": "2026-11-28T00:23:33.650Z",
   "days": [
     {
       "date": "2026-11-27",
@@ -13,6 +13,17 @@
       "ai": null,
       "ai_status": "Unavailable: source API could not be retrieved in this session",
       "coverage": "Partial: register snapshot only; no complete global feed reconciliation"
+    },
+    {
+      "date": "2026-11-28",
+      "checked_at": "2026-11-28T00:23:33.650Z",
+      "register_as_of": "2026-11-27T20:21:42.450Z",
+      "total": 33,
+      "p1": 24,
+      "kev": 18,
+      "ai": null,
+      "ai_status": "offensive.agency, data by ONYPHE: aggregate API https://offensive.agency/api/v1/stats and public source https://offensive.agency/ inaccessible; observation window and metrics unverified.",
+      "coverage": "Partial indexed reporting review; incomplete 72-hour and fixed-baseline reconciliation across KEV, NVD/CVE.org, NCSC, MSRC, GitHub advisories, vendor PSIRTs, researchers, FIRST EPSS and sector/AI campaign sources. No asset inventory."
     }
   ]
 }
