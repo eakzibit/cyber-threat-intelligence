@@ -1,7 +1,7 @@
 {
   "schema": "cti-cumulative-v1",
   "baseline": "2026-11-23T00:01:00Z",
-  "as_of": "2026-11-27T20:21:42.450Z",
+  "as_of": "2026-11-28T01:25:42.014Z",
   "records": [
     {
       "cve": "CVE-2026-99362",
@@ -801,23 +801,23 @@
       "vendor": "GeoServer / OSGeo",
       "technology": "GeoServer",
       "asset": "Application",
-      "date": "2026-11-25",
-      "event": "Reported in-the-wild exploit validation",
-      "evidence": "Confirmed exploitation",
+      "date": "2026-11-27",
+      "event": "CISA adds vulnerability to KEV",
+      "evidence": "Confirmed exploitation (CISA KEV)",
       "priority": "P1",
       "score": 8.6,
       "cvss_version": "Version not independently verified",
-      "summary": "Unauthenticated WFS XML injection exposes readable files and may reach internal URLs.",
+      "summary": "CISA confirmed known exploitation and added this vulnerability to KEV on 27 November. Unauthenticated WFS XML injection exposes readable files and may reach internal URLs.",
       "impact": "Component of an unauthenticated chain from exposed WFS to administrator access and code execution as the GeoServer service account; possible geospatial data theft or alteration.",
       "action": "Restrict external GeoServer/WFS access; upgrade to 3.0.2 or 2.28.6 (2.27.7 fixes the unsupported 2.27 branch); investigate before restoring access and rotate exposed credentials and secrets.",
       "hunt": "Review WFS stored-query creation, invocation and deletion, abnormal XML errors, unexpected administrator sessions, JDBC configuration changes, uploaded files, Java child processes and outbound connections.",
       "affected": "Vulnerable GeoServer releases, including 3.0.1 and 2.28.5; verify exact branch ranges with project advisories.",
       "fixed": "3.0.2, 2.28.6, 2.27.7 (unsupported branch)",
       "patch": "Available",
-      "kev": "Not listed in CISA catalog 2026.11.25",
+      "kev": "Yes",
       "published": "Advisory details public 23–24 November 2026",
       "epss": "Not verified",
-      "notes": "watchTowr honeypot exploit-validation activity reported 25 November; successful full-chain host compromise not established.",
+      "notes": "watchTowr honeypot exploit-validation activity reported 25 November; successful full-chain host compromise not established. CISA KEV added 2026-11-27; federal due date 2026-11-30.",
       "sources": [
         {
           "label": "Eye Security original research",
@@ -830,10 +830,24 @@
         {
           "label": "Exploitation reporting",
           "url": "https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html"
+        },
+        {
+          "label": "CISA official KEV catalogue",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
         }
       ],
       "owner": "Application security / GIS platform / SOC",
-      "sla": "Immediate assessment; target 24h"
+      "sla": "Immediate assessment; target 24h",
+      "history": [
+        {
+          "date": "2026-11-25",
+          "event": "Reported in-the-wild exploit validation",
+          "summary": "Unauthenticated WFS XML injection exposes readable files and may reach internal URLs.",
+          "evidence": "Confirmed exploitation",
+          "priority": "P1",
+          "kev": "Not listed in CISA catalog 2026.11.25"
+        }
+      ]
     },
     {
       "cve": "CVE-2026-129244",
@@ -879,23 +893,23 @@
       "vendor": "GeoServer / OSGeo",
       "technology": "GeoServer",
       "asset": "Application",
-      "date": "2026-11-24",
-      "event": "Public researcher-demonstrated RCE chain",
-      "evidence": "Researcher demonstrated",
-      "priority": "P2",
+      "date": "2026-11-27",
+      "event": "CISA adds vulnerability to KEV",
+      "evidence": "Confirmed exploitation (CISA KEV)",
+      "priority": "P1",
       "score": 8.8,
       "cvss_version": "Version not independently verified",
-      "summary": "Service-name authorization bypass permits protected OWS operations.",
+      "summary": "CISA confirmed known exploitation and added this vulnerability to KEV on 27 November. Service-name authorization bypass permits protected OWS operations.",
       "impact": "Component of an unauthenticated chain from exposed WFS to administrator access and code execution as the GeoServer service account; possible geospatial data theft or alteration.",
       "action": "Restrict external GeoServer/WFS access; upgrade to 3.0.2 or 2.28.6 (2.27.7 fixes the unsupported 2.27 branch); investigate before restoring access and rotate exposed credentials and secrets.",
       "hunt": "Review WFS stored-query creation, invocation and deletion, abnormal XML errors, unexpected administrator sessions, JDBC configuration changes, uploaded files, Java child processes and outbound connections.",
       "affected": "Vulnerable GeoServer releases, including 3.0.1 and 2.28.5; verify exact branch ranges with project advisories.",
       "fixed": "3.0.2, 2.28.6, 2.27.7 (unsupported branch)",
       "patch": "Available",
-      "kev": "Not listed in CISA catalog 2026.11.25",
+      "kev": "Yes",
       "published": "Advisory details public 23–24 November 2026",
       "epss": "Not verified",
-      "notes": "Demonstrated chain component; no independent confirmation of malicious use of this individual CVE.",
+      "notes": "Demonstrated chain component; no independent confirmation of malicious use of this individual CVE. CISA KEV added 2026-11-27; federal due date 2026-11-30.",
       "sources": [
         {
           "label": "Eye Security original research",
@@ -908,10 +922,24 @@
         {
           "label": "Exploitation reporting",
           "url": "https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html"
+        },
+        {
+          "label": "CISA official KEV catalogue",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
         }
       ],
       "owner": "Application security / GIS platform / SOC",
-      "sla": "Urgent; target 24–72h"
+      "sla": "Urgent; target 24–72h",
+      "history": [
+        {
+          "date": "2026-11-24",
+          "event": "Public researcher-demonstrated RCE chain",
+          "summary": "Service-name authorization bypass permits protected OWS operations.",
+          "evidence": "Researcher demonstrated",
+          "priority": "P2",
+          "kev": "Not listed in CISA catalog 2026.11.25"
+        }
+      ]
     },
     {
       "cve": "CVE-2026-129245",
@@ -1077,18 +1105,18 @@
       "asset": "Application",
       "score": null,
       "cvss_version": "Not verified",
-      "kev": "Not listed in 2026-11-25 catalogue",
+      "kev": "Yes",
       "epss": "Not verified",
       "owner": "Application Security / Platform Engineering / SOC",
       "sla": "Immediate assessment; target 24 hours for exposed systems",
       "cve": "CVE-2026-136716",
       "vendor": "Drupal",
       "technology": "Drupal core",
-      "date": "2026-11-25",
-      "event": "Vendor confirms active exploitation and releases follow-up installer fix",
-      "evidence": "Confirmed active exploitation",
+      "date": "2026-11-27",
+      "event": "CISA adds vulnerability to KEV",
+      "evidence": "Confirmed exploitation (CISA KEV)",
       "priority": "P1",
-      "summary": "Unauthenticated site takeover remains possible in unusual or incomplete installation states, including production sites, despite earlier installer fixes.",
+      "summary": "CISA confirmed known exploitation and added this vulnerability to KEV on 27 November. Unauthenticated site takeover remains possible in unusual or incomplete installation states, including production sites, despite earlier installer fixes.",
       "impact": "Site takeover, data compromise and malicious content or persistence.",
       "action": "Upgrade to 10.6.23, 11.3.23 or 11.4.14; run update.php to execute the required update hook; secure the installer and investigate compromise.",
       "hunt": "Review installer access and site logs, unexpected user 1 changes or activity; verify user 1 email and consider password reset. A currently safe state does not rule out past compromise.",
@@ -1096,11 +1124,25 @@
       "fixed": "10.6.23, 11.3.23, 11.4.14 plus required update hook",
       "patch": "Available",
       "published": "2026-11-25",
-      "notes": "Drupal risk 21/25 is not CVSS. Remote installer accessibility and unusual installation state are prerequisites. Secure installer blocks this path.",
+      "notes": "Drupal risk 21/25 is not CVSS. Remote installer accessibility and unusual installation state are prerequisites. Secure installer blocks this path. CISA KEV added 2026-11-27; federal due date 2026-11-30.",
       "sources": [
         {
           "label": "Drupal SA-CORE-2026-019",
           "url": "https://www.drupal.org/sa-core-2026-019"
+        },
+        {
+          "label": "CISA official KEV catalogue",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-11-25",
+          "event": "Vendor confirms active exploitation and releases follow-up installer fix",
+          "summary": "Unauthenticated site takeover remains possible in unusual or incomplete installation states, including production sites, despite earlier installer fixes.",
+          "evidence": "Confirmed active exploitation",
+          "priority": "P1",
+          "kev": "Not listed in 2026-11-25 catalogue"
         }
       ]
     },
